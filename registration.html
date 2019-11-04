@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>Event Registration</title>
+<style>
+	body
+	{
+	background:url("1.jpg");
+	background-size:cover;
+	}
+	#i1
+	{
+	background-color:white;
+	opacity:0.8;
+	width:500px;
+	height:500px;
+	}
+	</style>
+</head>
+<body>
+<div align="center">
+<h2>Registration page</h2>
+<div id="i1">
+<form name="regform" method="post" onsubmit="return check()" action="success.html">
+First Name:<input type="text" name="fname" placeholder="First Name"><br><br>
+Last Name:<input type="text" name="lname" placeholder="Last Name"><br><br>
+Gender:<input type="radio" name="gender" value="f">Female
+<input type="radio" name="gender" value="m">Male<br><br>
+UserName:<input type="text" name="uname" placeholder="UserName"><br><br>
+phone number:<input type="text" name="no" placeholder="Mobile Number" pattern="[789][0-9]{9}"><br><br>
+Email-id:<input type="text" name="email" placeholder="Enter your Email"><br><br>
+Password:<input type="password" value="" name="pwd"><br><br>
+Confirm Password:<input type="password" value="" name="pwd1"><br><br>
+College Name:<input type="text" name="cname" placeholder="College Name"><br><br>
+Year of study:<select name="year"><br><br>
+<option>First Year</option>
+<option>Second Year</option>
+<option>Third Year</option>
+<option>Fourth Year</option>
+</select><br><br>
+Department:<select name="dept"><br><br>
+<option>CSE</option>
+<option>IT</option>
+<option>ECE</option>
+<option>EEE</option>
+</select><br><br>
+Events:<select name="event"><br><br>
+<option>Workshops</option>
+<option>Paper presentation</option>
+<option>Dance Competition</option>
+<option>Singing Competition</option>
+</select><br><br>
+
+<input type="submit" value="Register">
+</form>
+</div>
+<script>
+
+function check()
+{
+	var fname=document.regform.fname.value;
+	var lname=document.regform.lname.value;
+	var uname=document.regform.uname.value;
+	var no=document.regform.no.value;
+	var email=document.regform.email.value;
+	var pwd=document.regform.pwd.value;
+	var pwd1=document.regform.pwd1.value;
+	var cname=document.regform.cname.value;
+	if(fname=="")
+	{
+	window.alert("First Name cannot be empty");
+	return false;
+	}
+	if(lname=="")
+	{
+	window.alert("Last Name cannot be empty");
+	return false;
+	}
+	if(uname=="")
+	{
+	window.alert("User Name cannot be empty");
+	return false;
+	}
+	if(no="")
+	{
+	window.alert("Number cannot be empty");
+	return false;
+	}
+	if(email=="")
+	{
+	window.alert("Name cannot be empty");
+	return false;
+	}
+	if(pwd!=pwd1)
+	{
+	window.alert("Password Mismatch");
+	return false;
+	}
+	if(uname.length<6 || uname.length>20)
+	{
+	window.alert("Username should contain atleast 6 character and maximum 20 characters");
+	return false;
+	}
+	if(pwd.length<6)
+	{
+	window.alert("Password length should be atleast 6 characters");
+	return false;
+	}
+}
+</script>
+</body>
+</html>
